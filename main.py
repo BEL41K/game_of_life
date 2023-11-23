@@ -41,9 +41,10 @@ def display(grid):
     print()
 
 if __name__ == "__main__":
-    rows, cols = 10, 10
+    rows, cols = 25, 25
     game_grid = create_grid(rows, cols)
-    for _ in range(10):
+    while True:
         display(game_grid)
         game_grid = next_generation(game_grid)
-        time.sleep(1)
+        time.sleep(0.2)
+        os.system('cls')
