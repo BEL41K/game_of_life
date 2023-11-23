@@ -1,6 +1,7 @@
 import random
 import time
 import os
+import subprocess
 
 def create_grid(rows, cols):
      return [[random.choice([0, 1]) for _ in range(cols)] for _ in range(rows)]
@@ -48,4 +49,8 @@ if __name__ == "__main__":
         display(game_grid)
         game_grid = next_generation(game_grid)
         time.sleep(0.2)
-        os.system('cls')
+        if os.name == 'nt':
+            os.system('cls')
+        else:
+            subprocess.call('clear', shell=True)
+
